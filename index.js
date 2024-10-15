@@ -11,6 +11,8 @@ const TransitionRouter = require("./routers/transition_router");
 // const { adminAuth } = require('./middlewares/adminAuth');
 require('dotenv').config();
 
+const PORT =  process.env.PORT || 5000;
+
 const app = express();
 app.use(cors()); //middleware
 app.use(express.json());
@@ -33,7 +35,7 @@ mongoose.connect(
  () => {
     console.log('DB connected');
     app.listen(
-        process.env.PORT,
+        PORT,
         () => console.log("Server chalu hai")
     )
  }
